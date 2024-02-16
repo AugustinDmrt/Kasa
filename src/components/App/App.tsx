@@ -1,10 +1,10 @@
-import Banner from "../Banner/Banner";
+import Header from "../Header/Header.tsx";
 import "./App.css";
 
 function App() {
   return (
     <>
-      <Banner />
+      <Header />
     </>
   );
 }
