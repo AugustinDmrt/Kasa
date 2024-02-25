@@ -1,4 +1,4 @@
-import Layout from "../../pages/Layout.tsx";
+import Layout from "../../pages/Layout/Layout.tsx";
 
 import "./App.css";
 

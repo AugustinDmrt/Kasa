@@ -1,7 +1,11 @@
 import "./Footer.sass";
 
-function Footer() {
-  return <h1>Footer</h1>;
-}
+const Footer = () => {
+  return (
+    <footer className="footer">
+      <p>© 2020 Kasa. All rights reserved</p>
+    </footer>
+  );
+};
 
 export default Footer;
