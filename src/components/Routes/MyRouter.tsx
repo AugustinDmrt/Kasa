@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ErrorPage from "../../pages/ErrorPage/ErrorPage";
-import Logement from "../../pages/Logement";
+import Logement from "../../pages/Home/Home";
 import App from "../App/App";
 
 export default function MyRouter() {
