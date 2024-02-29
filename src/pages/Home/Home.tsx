@@ -1,10 +1,12 @@
+import BannerImgHome from "../../assets/images/layout/fond1.png";
+import Banner from "../../components/Banner/Banner";
 import "./Home.sass";
 
 const Home = () => {
   return (
-    <div>
-      <h1>Logement</h1>
-      <p>Bienvenue sur la page de logement de notre application.</p>
+    <div className="home-container">
+      <Banner img={BannerImgHome} text="Chez vous, partout et ailleurs" />
+      <Banner img={BannerImgHome} text="" />
     </div>
   );
 };

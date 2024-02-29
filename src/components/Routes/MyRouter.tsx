@@ -1,15 +1,13 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import ErrorPage from "../../pages/ErrorPage/ErrorPage";
-import Logement from "../../pages/Home/Home";
-import App from "../App/App";
+import Layout from "../../pages/Layout/Layout";
 
 export default function MyRouter() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/apropos" element={<Logement />} />
-        <Route path="*" element={<ErrorPage />} />
+        <Route path="/" element={<Layout nav="home" />} />
+        <Route path="/apropos" element={<Layout nav="apropos" />} />
+        <Route path="*" element={<Layout nav="error" />} />
       </Routes>
     </BrowserRouter>
   );
