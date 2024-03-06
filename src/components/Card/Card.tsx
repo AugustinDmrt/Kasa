@@ -1,7 +1,10 @@
+import "./Card.sass";
+
 const Card = () => {
   return (
-    <div>
-      <h1>My Card</h1>
+    <div className="card">
+      <img className="card-image" src="" alt="" />
+      <h1 className="card-title">My Card</h1>
     </div>
   );
 };
