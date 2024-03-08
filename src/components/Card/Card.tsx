@@ -1,10 +1,12 @@
 import "./Card.sass";
 
-const Card = () => {
+const Card = (props: { img: string; title: string }) => {
+  const img = props.img;
+  const title = props.title;
   return (
     <div className="card">
-      <img className="card-image" src="" alt="" />
-      <h1 className="card-title">My Card</h1>
+      <img className="card-image" src={img} alt="" />
+      <h1 className="card-title">{title}</h1>
     </div>
   );
 };
