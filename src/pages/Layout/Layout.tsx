@@ -2,6 +2,7 @@ import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import Home from "../Home/Home";
+import Logement from "../Logement/Logement";
 import "./Layout.sass";
 
 function BodyContent(props: { nav: string }) {
@@ -11,6 +12,8 @@ function BodyContent(props: { nav: string }) {
       return <Home />;
     case "apropos":
       break;
+    case "logement":
+      return <Logement />;
     case "error":
       return <ErrorPage />;
 

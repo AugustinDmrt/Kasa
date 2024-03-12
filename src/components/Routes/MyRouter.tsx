@@ -7,6 +7,7 @@ export default function MyRouter() {
       <Routes>
         <Route path="/" element={<Layout nav="home" />} />
         <Route path="/apropos" element={<Layout nav="apropos" />} />
+        <Route path="/logement/:id" element={<Layout nav="logement" />} />
         <Route path="*" element={<Layout nav="error" />} />
       </Routes>
     </BrowserRouter>
