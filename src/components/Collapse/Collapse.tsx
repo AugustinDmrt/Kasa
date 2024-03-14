@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Collapse.sass";
 
 interface CollapseProps {
   title: string;
@@ -14,8 +15,10 @@ const Collapse: React.FC<CollapseProps> = ({ title, children }) => {
 
   return (
     <div>
-      <button onClick={toggleCollapse}>{title}</button>
-      {isOpen && <div>{children}</div>}
+      <button className="collapsible" onClick={toggleCollapse}>
+        {title}
+      </button>
+      {isOpen && <div className="content">{children}</div>}
     </div>
   );
 };
