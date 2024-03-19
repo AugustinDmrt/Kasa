@@ -1,20 +1,20 @@
 import { CaretLeft, CaretRight } from "@phosphor-icons/react";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import "./Slideshow.sass";
 
 const SlideShow = (props: { pictures: string[] }) => {
   let indexImg = 0;
+  const indexNow = props.pictures[indexImg];
   const [currentImg, setCurrentImg] = useState("");
+  const loadImg = useCallback(() => {
+    setCurrentImg(indexNow);
+  }, [indexNow, setCurrentImg]);
+
   useEffect(() => {
     loadImg();
     console.log(indexImg);
-  }, []);
+  }, [indexImg, loadImg]);
 
-  function loadImg() {
-    // mettre props.pictures dans une variable et appelé ici la variable
-    setCurrentImg(props.pictures[indexImg]);
-  }
-  //faire des tests sur le min max du tableau avec .lenght pour revenir au debut ou fin du tableau
   function decrImg() {
     indexImg--;
     loadImg();
