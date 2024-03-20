@@ -1,36 +1,43 @@
 import { CaretLeft, CaretRight } from "@phosphor-icons/react";
-import { useCallback, useEffect, useState } from "react";
+import { useState } from "react";
 import "./Slideshow.sass";
 
 const SlideShow = (props: { pictures: string[] }) => {
-  let indexImg = 0;
-  const indexNow = props.pictures[indexImg];
-  const [currentImg, setCurrentImg] = useState("");
-  const loadImg = useCallback(() => {
-    setCurrentImg(indexNow);
-  }, [indexNow, setCurrentImg]);
+  const [indexImg, setIndexImg] = useState(0);
 
-  useEffect(() => {
-    loadImg();
-    console.log(indexImg);
-  }, [indexImg, loadImg]);
+  const decrImg = () => {
+    setIndexImg((prevIndex) => {
+      if (prevIndex === 0) {
+        return props.pictures.length - 1;
+      } else {
+        return prevIndex - 1;
+      }
+    });
+  };
 
-  function decrImg() {
-    indexImg--;
-    loadImg();
-  }
+  const incrImg = () => {
+    setIndexImg((prevIndex) => {
+      if (prevIndex === props.pictures.length - 1) {
+        return 0;
+      } else {
+        return prevIndex + 1;
+      }
+    });
+  };
 
-  function incrImg() {
-    indexImg++;
-    loadImg();
-  }
+  const currentImg = props.pictures[indexImg];
 
   return (
     <div className="slideshow-container">
-      <CaretLeft size={32} weight="bold" color="red" onClick={decrImg} />
+      {props.pictures.length > 1 && (
+        <CaretLeft size={32} weight="bold" color="red" onClick={decrImg} />
+      )}
       <img className="slideshow-image" src={currentImg} alt=""></img>
-      <CaretRight size={32} weight="bold" color="red" onClick={incrImg} />
+      {props.pictures.length > 1 && (
+        <CaretRight size={32} weight="bold" color="red" onClick={incrImg} />
+      )}
     </div>
   );
 };
+
 export default SlideShow;
