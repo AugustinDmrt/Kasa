@@ -30,11 +30,23 @@ const SlideShow = (props: { pictures: string[] }) => {
   return (
     <div className="slideshow-container">
       {props.pictures.length > 1 && (
-        <CaretLeft size={32} weight="bold" color="red" onClick={decrImg} />
+        <CaretLeft
+          className="CaretLeft"
+          size={32}
+          weight="bold"
+          color="white"
+          onClick={decrImg}
+        />
       )}
       <img className="slideshow-image" src={currentImg} alt=""></img>
       {props.pictures.length > 1 && (
-        <CaretRight size={32} weight="bold" color="red" onClick={incrImg} />
+        <CaretRight
+          className="CaretRight"
+          size={32}
+          weight="bold"
+          color="white"
+          onClick={incrImg}
+        />
       )}
     </div>
   );

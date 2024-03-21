@@ -4,11 +4,25 @@
   align-items: center
   width: 100%
   margin-right: auto
-  margin-left: auto  
+  margin-left: auto
+  justify-content: space-between 
+  position: relative
 
   .slideshow-image
     display: flex
     width: 90%
     height: 300px
     object-fit: cover
-    border-radius: 10px  
+    border-radius: 10px 
+
+.CaretLeft,
+.CaretRight 
+  position: absolute 
+  top: 50%
+  transform: translateY(-50%)
+
+.CaretLeft 
+  left: 6%
+
+.CaretRight 
+  right: 6%
