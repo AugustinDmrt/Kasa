@@ -1,5 +1,6 @@
 import Data from "../../assets/config/json/logements.json";
 import Slideshow from "../../components/Slideshow/Slideshow";
+import Tags from "../../components/Tags/Tags";
 import "./Logement.sass";
 
 import { useParams } from "react-router-dom";
@@ -25,6 +26,9 @@ const Logement = () => {
       </div>
       <h1 className="logement-title">{logement?.title}</h1>
       <h2 className="logement-location">{logement?.location}</h2>
+      <div className="logement-tags">
+        <Tags tags={logement?.tags ?? []} />
+      </div>
     </div>
   );
 };
