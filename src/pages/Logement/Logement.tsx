@@ -1,3 +1,4 @@
+import { Star } from "@phosphor-icons/react";
 import Data from "../../assets/config/json/logements.json";
 import Slideshow from "../../components/Slideshow/Slideshow";
 import Tags from "../../components/Tags/Tags";
@@ -28,6 +29,19 @@ const Logement = () => {
       <h2 className="logement-location">{logement?.location}</h2>
       <div className="logement-tags">
         <Tags tags={logement?.tags ?? []} />
+      </div>
+      <div className="logement-host">
+        <div className="logement-stars">
+          {Array.from({ length: parseInt(logement?.rating ?? "0") }).map(
+            (_, index) => (
+              <Star size={32} />
+            )
+          )}
+        </div>
+        <div className="logement-owner">
+          <p className="owner-name">{logement?.host.name}</p>
+          <img className="owner-picture" src={logement?.host.picture} alt="" />
+        </div>
       </div>
     </div>
   );
