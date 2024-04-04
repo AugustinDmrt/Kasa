@@ -22,9 +22,9 @@ const Logement = () => {
 
   const getStarArray = (rating: string | undefined) => {
     const numRating = parseInt(rating ?? "0");
-    const filledStars = Array(numRating).fill(true); // Étoiles remplies
-    const emptyStars = Array(5 - numRating).fill(false); // Étoiles vides
-    return filledStars.concat(emptyStars); // Concaténer les deux tableaux
+    const filledStars = Array(numRating).fill(true);
+    const emptyStars = Array(5 - numRating).fill(false);
+    return filledStars.concat(emptyStars);
   };
 
   return (
