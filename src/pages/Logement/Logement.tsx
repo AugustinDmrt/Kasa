@@ -20,6 +20,13 @@ const Logement = () => {
   const { id } = useParams();
   const logement = getLogement(id ?? "");
 
+  const getStarArray = (rating: string | undefined) => {
+    const numRating = parseInt(rating ?? "0");
+    const filledStars = Array(numRating).fill(true); // Étoiles remplies
+    const emptyStars = Array(5 - numRating).fill(false); // Étoiles vides
+    return filledStars.concat(emptyStars); // Concaténer les deux tableaux
+  };
+
   return (
     <div className="logement-container">
       <div className="logement-carousel">
@@ -32,11 +39,14 @@ const Logement = () => {
       </div>
       <div className="logement-host">
         <div className="logement-stars">
-          {Array.from({ length: parseInt(logement?.rating ?? "0") }).map(
-            (_, index) => (
-              <Star size={32} />
-            )
-          )}
+          {getStarArray(logement?.rating).map((filled, index) => (
+            <Star
+              key={index}
+              size={24}
+              weight="fill"
+              color={filled ? "#FF6060" : "#E3E3E3"}
+            />
+          ))}
         </div>
         <div className="logement-owner">
           <p className="owner-name">{logement?.host.name}</p>
