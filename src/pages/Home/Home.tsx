@@ -11,13 +11,19 @@ const Home = () => {
   return (
     <div className="home-container">
       <Banner img={BannerImgHome} text="Chez vous, partout et ailleurs" />
-      {datas.map((data) => {
-        return (
-          <Link key={data.id} className="home-link" to={`/logement/${data.id}`}>
-            <Card img={data.cover} title={data.title} />
-          </Link>
-        );
-      })}
+      <div className="home-card">
+        {datas.map((data) => {
+          return (
+            <Link
+              key={data.id}
+              className="home-link"
+              to={`/logement/${data.id}`}
+            >
+              <Card img={data.cover} title={data.title} />
+            </Link>
+          );
+        })}
+      </div>
     </div>
   );
 };

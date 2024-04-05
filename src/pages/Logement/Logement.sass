@@ -60,6 +60,13 @@
 
 .logement-collapse
   display: flex
+  flex-direction: column
   width: 90%
   margin-left: auto
   margin-right: auto
+  gap: 20px
+
+@media (min-width: 1440px)
+  .logement-collapse
+    flex-direction: row
+    align-items: flex-start

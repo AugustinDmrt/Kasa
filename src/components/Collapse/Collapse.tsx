@@ -11,20 +11,24 @@ const Collapse = (props: { title: string; data: string[] }) => {
 
   return (
     <div className="collapse-container">
-      <h2 className="collapse-title">{props.title}</h2>
-      <div className="collapse-header" onClick={toggleCollapse}>
-        {isOpen ? (
-          <CaretUp size={32} weight="bold" color="white" />
-        ) : (
-          <CaretDown size={32} weight="bold" color="white" />
-        )}
+      <div className="collapse-header">
+        <h2 className="collapse-title">{props.title}</h2>
+        <div className="collapse-arrow" onClick={toggleCollapse}>
+          {isOpen ? (
+            <CaretUp size={32} weight="bold" color="white" />
+          ) : (
+            <CaretDown size={32} weight="bold" color="white" />
+          )}
+        </div>
       </div>
 
       {isOpen && (
         <div className="collapse-div">
           <ul className="collapse-ul">
             {props.data.map((item, index) => (
-              <li key={index}>{item}</li>
+              <li className="collapse-li" key={index}>
+                {item}
+              </li>
             ))}
           </ul>
         </div>

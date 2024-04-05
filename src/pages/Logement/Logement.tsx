@@ -56,7 +56,7 @@ const Logement = () => {
       </div>
       <div className="logement-collapse">
         <Collapse title="Description" data={[logement?.description ?? ""]} />
-        {/* <Collapse title="Equipements" data={logement?.equipments ?? []} /> */}
+        <Collapse title="Equipements" data={logement?.equipments ?? []} />
       </div>
     </div>
   );
