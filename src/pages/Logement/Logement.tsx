@@ -5,6 +5,7 @@ import Tags from "../../components/Tags/Tags";
 import "./Logement.sass";
 
 import { useParams } from "react-router-dom";
+import Collapse from "../../components/Collapse/Collapse";
 
 const Logement = () => {
   function getLogement(id: string) {
@@ -52,6 +53,10 @@ const Logement = () => {
           <p className="owner-name">{logement?.host.name}</p>
           <img className="owner-picture" src={logement?.host.picture} alt="" />
         </div>
+      </div>
+      <div className="logement-collapse">
+        <Collapse title="Description" data={[logement?.description ?? ""]} />
+        {/* <Collapse title="Equipements" data={logement?.equipments ?? []} /> */}
       </div>
     </div>
   );
