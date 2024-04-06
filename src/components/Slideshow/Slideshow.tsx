@@ -26,6 +26,7 @@ const SlideShow = (props: { pictures: string[] }) => {
   };
 
   const currentImg = props.pictures[indexImg];
+  const positionText = `${indexImg + 1}/${props.pictures.length}`;
 
   return (
     <div className="slideshow-container">
@@ -39,6 +40,7 @@ const SlideShow = (props: { pictures: string[] }) => {
         />
       )}
       <img className="slideshow-image" src={currentImg} alt=""></img>
+      <div className="image-position">{positionText}</div>
       {props.pictures.length > 1 && (
         <CaretRight
           className="CaretRight"
