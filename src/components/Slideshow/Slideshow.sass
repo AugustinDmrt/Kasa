@@ -1,0 +1,46 @@
+.slideshow-container
+  display: flex
+  flex-direction: column
+  align-items: center
+  width: 100%
+  margin-right: auto
+  margin-left: auto
+  justify-content: space-between 
+  position: relative
+
+  .slideshow-image
+    display: flex
+    width: 90%
+    height: 300px
+    object-fit: cover
+    border-radius: 10px
+  .image-position
+    display: none 
+
+.CaretLeft,
+.CaretRight 
+  position: absolute 
+  top: 50%
+  transform: translateY(-50%)
+
+.CaretLeft 
+  left: 6%
+
+.CaretRight 
+  right: 6%
+
+
+@media (min-width:1440px)
+  .slideshow-container
+    .slideshow-image
+      height: 500px
+    .image-position
+      position: absolute
+      color: white
+      font-size: 18px
+      bottom: 8%
+      display: block
+
+
+  
+
